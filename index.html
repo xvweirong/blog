@@ -1,5 +1,235 @@
-<html>
-<body>
-<h1>Coming soon...</h1>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  
+    <meta name="author" content="David Xu">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/weirong/stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/weirong/stylesheets/style.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/widgets/google_prettify/stylesheets/twitter-bootstrap.css" type="text/css" rel="stylesheet" media="all">
+ 
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">Hello World</a>
+          <ul class="nav">
+            
+              
+
+
+  <li><a href="/archive">Archive</a></li>
+
+
+            
+              
+
+
+  <li><a href="/tags">Tags</a></li>
+
+
+            
+              
+
+
+  <li><a href="/categories">Categories</a></li>
+
+
+            
+              
+
+
+  <li><a href="/pages">Pages</a></li>
+
+
+            
+              
+
+
+  <li><a href="/about">About Me</a></li>
+
+
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>Home </h1>
+</div>
+
+<div class="row">
+  <div class="span12">
+    
+<h2>Latest Update</h2>
+
+
+<div class="post">
+  <h1 class="title"><a href="/default/Welcome-to-Scripted/">Welcome to Scripted</a> <span class="date">2013-04-11</span></h1>
+
+  <p><a href="https://travis-ci.org/scripted-editor/scripted">![Build Status](https://travis-ci.org/scripted-editor/scripted.png?branch=master)</a></p>
+
+<h2><a style="display: block;" name="what-is-scripted?" href="#what-is-scripted?"></a>What is Scripted?</h2>
+
+<p>Scripted is a fast and lightweight code editor with an initial focus on JavaScript editing.
+Scripted is a browser based editor and the editor itself is served from a locally running Node.js
+server instance.</p>
+
+<p><center>
+<img src="http://dist.springsource.org/release/SCRIPTED/screenshot2.png" width="736" height="451"/>
+</center></p>
+
+<p>What are the key features?</p>
+
+<ul>
+<li>Fast startup, lightweight.</li>
+<li>Syntax highlighting for JavaScript, HTML and CSS.</li>
+<li>Errors and warnings:
+
+<ul>
+<li>JSHint is integrated to provide error/warning markers on JavaScript code.</li>
+<li>AMD and CommonJS module resolution: there is basic resolution where unresolved references will be marked as errors.</li>
+</ul></li>
+<li>Content assist:
+
+<ul>
+<li>Basic content assist for HTML, CSS</li>
+<li>For JavaScript, content assist is driven by a type inferencing engine which is aware of AMD/CommonJS module
+dependencies and also uses JSDoc comments to help it understand the code.</li>
+</ul></li>
+<li>Hovers: hovering over a JavaScript identifier will bring up the inferred type signature.</li>
+<li>Navigation:
+
+<ul>
+<li>press F8 on an identifier (that the inferencer has recognized) and the editor will navigate to the declaration.</li>
+<li>this also works on module identifiers (e.g. in <code>define()</code> clauses)</li>
+</ul></li>
+<li>Formatting: JSbeautify is integrated</li>
+<li>Sidepanel: alongside the main editor a sidepanel can be opened - currently this can be used to host a second editor.</li>
+<li>Key binding to external command: Key bindings in the editor can invoke external commands (less, mvn, etc)</li>
+</ul>
+
+
+  <div class="more">
+    <a href="/default/Welcome-to-Scripted/" class="btn">read more..</a>
+  </div>
+</div>
+
+<div class="post">
+  <h1 class="title"><a href="/Clojure/The-Clojure-Style-Guide/">The Clojure Style Guide</a> <span class="date">2013-04-10</span></h1>
+
+  <p>This Clojure style guide recommends best practices so that real-world Clojure
+programmers can write code that can be maintained by other real-world Clojure
+programmers. A style guide that reflects real-world usage gets used, and a
+style guide that holds to an ideal that has been rejected by the people it is
+supposed to help risks not getting used at all &ndash; no matter how good it is.</p>
+
+<p>The guide is separated into several sections of related rules. I&rsquo;ve
+tried to add the rationale behind the rules (if it&rsquo;s omitted I&rsquo;ve
+assumed that is pretty obvious).</p>
+
+<p>I didn&rsquo;t come up with all the rules out of nowhere - they are mostly
+based on my extensive career as a professional software engineer,
+feedback and suggestions from members of the Clojure community, and
+various highly regarded Clojure programming resources, such as
+<a href="http://www.clojurebook.com/">&ldquo;Clojure Programming&rdquo;</a>
+and <a href="http://joyofclojure.com/">&ldquo;The Joy of Clojure&rdquo;</a>.</p>
+
+<p>The guide is still a work in progress - some sections are missing,
+others are incomplete, some rules are lacking examples, some rules
+don&rsquo;t have examples that illustrate them clearly enough. In due time
+these issues will be addressed - just keep them in mind for now.</p>
+
+
+  <div class="more">
+    <a href="/Clojure/The-Clojure-Style-Guide/" class="btn">read more..</a>
+  </div>
+</div>
+
+<div class="post">
+  <h1 class="title"><a href="/2012/new-born.html">你的第一篇博客</a> <span class="date">2012-12-22</span></h1>
+
+  <h1>感谢你使用Gor编写博客</h1>
+
+<h2>本文位于 posts/first-blog.md , 你可以任何删掉,修改这个文件</h2>
+
+<p>文件开头是当前文章的元数据</p>
+
+<ol>
+<li>date为自动生成, 当然,你可以修改,这是你的自由</li>
+<li>permalink 可以是固定地址,也可以由gor为你自动生成</li>
+<li>categories 就是分类, 可以多个</li>
+<li>tags 同理,多个标签也是很常见的</li>
+</ol>
+
+<p>请确保文件使用UTF8 without BOM编码</p>
+
+<h2>你可以通过执行下面的语句来新建一篇博客:</h2>
+
+<pre><code>gor post 文章标题
+</code></pre>
+
+
+  <div class="more">
+    <a href="/2012/new-born.html" class="btn">read more..</a>
+  </div>
+</div>
+
+  </div>
+</div>
+
+      </div>
+
+      <footer>
+        <p>&copy; David Xu 2013 
+          with help from <a href="http://github.com/wendal/gor" target="_blank" title="Gor -- Fast Blog">Gor</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+		  and Idea from <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint ";
+  }
+  prettyPrint();
+</script>
+
+    
+<script>
+    var _gaq=[['_setAccount','UA-40147151-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+  </body>
 </html>

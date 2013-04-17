@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>http://blog.xuweirong.com/</loc>
+	</url>
+	<url>
+		<loc>http://blog.xuweirong.com/default/Welcome-to-Scripted/</loc>
+		<lastmod>2013-04-11</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>http://blog.xuweirong.com/Clojure/The-Clojure-Style-Guide/</loc>
+		<lastmod>2013-04-10</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>http://blog.xuweirong.com/2012/new-born.html</loc>
+		<lastmod>2012-12-22</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+</urlset>

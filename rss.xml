@@ -1,0 +1,1527 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+  <channel>
+    <title>Hello World</title>
+    <link>http://blog.xuweirong.com</link>
+    <pubDate>2013-04-17 02:49:33 +0800</pubDate>
+    <item>
+      <title>Welcome to Scripted</title>
+      <link>http://blog.xuweirong.com/default/Welcome-to-Scripted/</link>
+      <pubDate>2013-04-11 12:00:00 +0800</pubDate>
+      <description>&lt;p&gt;&lt;a href=&#34;https://travis-ci.org/scripted-editor/scripted&#34;&gt;![Build Status](https://travis-ci.org/scripted-editor/scripted.png?branch=master)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;what-is-scripted?&#34; href=&#34;#what-is-scripted?&#34;&gt;&lt;/a&gt;What is Scripted?&lt;/h2&gt;
+
+&lt;p&gt;Scripted is a fast and lightweight code editor with an initial focus on JavaScript editing.
+Scripted is a browser based editor and the editor itself is served from a locally running Node.js
+server instance.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&#34;http://dist.springsource.org/release/SCRIPTED/screenshot2.png&#34; width=&#34;736&#34; height=&#34;451&#34;/&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;What are the key features?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Fast startup, lightweight.&lt;/li&gt;
+&lt;li&gt;Syntax highlighting for JavaScript, HTML and CSS.&lt;/li&gt;
+&lt;li&gt;Errors and warnings:
+
+&lt;ul&gt;
+&lt;li&gt;JSHint is integrated to provide error/warning markers on JavaScript code.&lt;/li&gt;
+&lt;li&gt;AMD and CommonJS module resolution: there is basic resolution where unresolved references will be marked as errors.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Content assist:
+
+&lt;ul&gt;
+&lt;li&gt;Basic content assist for HTML, CSS&lt;/li&gt;
+&lt;li&gt;For JavaScript, content assist is driven by a type inferencing engine which is aware of AMD/CommonJS module
+dependencies and also uses JSDoc comments to help it understand the code.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Hovers: hovering over a JavaScript identifier will bring up the inferred type signature.&lt;/li&gt;
+&lt;li&gt;Navigation:
+
+&lt;ul&gt;
+&lt;li&gt;press F8 on an identifier (that the inferencer has recognized) and the editor will navigate to the declaration.&lt;/li&gt;
+&lt;li&gt;this also works on module identifiers (e.g. in &lt;code&gt;define()&lt;/code&gt; clauses)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Formatting: JSbeautify is integrated&lt;/li&gt;
+&lt;li&gt;Sidepanel: alongside the main editor a sidepanel can be opened - currently this can be used to host a second editor.&lt;/li&gt;
+&lt;li&gt;Key binding to external command: Key bindings in the editor can invoke external commands (less, mvn, etc)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The editor is actually the &lt;a href=&#34;http://www.eclipse.org/orion/&#34;&gt;Eclipse Orion&lt;/a&gt; editor with a few additional bells and whistles.
+Anyone familiar with editing in Eclipse will immediately know many of the key bindings
+the Scripted editor supports.&lt;/p&gt;
+
+&lt;p&gt;Many of these are covered in this introductory screencast:&lt;br&gt;
+&lt;a href=&#34;http://dist.springsource.org/release/SCRIPTED/Scripted2.mov&#34;&gt;&lt;img align=&#34;center&#34; src=&#34;http://dist.springsource.org/release/SCRIPTED/posterScripted2.png&#34; width=&#34;428&#34; height=&#34;263&#34;/&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1&gt;&lt;a style=&#34;display: block;&#34; name=&#34;how-do-i-try-it-out?&#34; href=&#34;#how-do-i-try-it-out?&#34;&gt;&lt;/a&gt;How do I try it out?&lt;/h1&gt;
+
+&lt;p&gt;The only pre-req for trying it out is that you have Node.js installed. Grab it from here: &lt;a href=&#34;http://nodejs.org&#34;&gt;http://nodejs.org/&lt;/a&gt;.
+The team has been testing with a range of versions from 0.6 to 0.8 but haven&amp;rsquo;t tested all of them exhaustively. It is recommended
+that you try to use the latest (0.8.16 at time of writing).&lt;/p&gt;
+
+&lt;h3&gt;Installing the most recent release via npm&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install -g scripted
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(possibly with a &lt;code&gt;sudo&lt;/code&gt; prefix on linux/mac). This will install the most recently published release. There are no further steps if installing via this route and &lt;code&gt;scr&lt;/code&gt; command will immediately be available to launch Scripted.&lt;/p&gt;
+
+&lt;h3&gt;Installing the very latest code via npm&lt;/h3&gt;
+
+&lt;p&gt;This will install directly from master.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install -g https://github.com/scripted-editor/scripted/tarball/master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(again possibly with a &lt;code&gt;sudo&lt;/code&gt;). Master is under constant development so you may see a hiccup or two but we try to keep it fully functional.&lt;/p&gt;
+
+&lt;h3&gt;Download a packaged zip&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dist.springsource.org/release/SCRIPTED/scripted_v0.3.0.zip&#34;&gt;Version 0.3.0 zip&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://scripted-editor.github.com/scripted/release_notes/0_3_0/scripted_0_3_0.html&#34;&gt;Version 0.3.0 Release Notes&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Once unzipped, ensure the bin folder contents are executable on mac/linux: &lt;code&gt;chmod 755 bin/*&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And add the bin folder to your PATH.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mac/linux: export PATH=&amp;lt;pathToUnzipLocationOrClone&amp;gt;/bin:$PATH
+win: set PATH=&amp;lt;pathToUnzipLocationOrClone&amp;gt;\bin;%PATH%
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Clone the repository and install it or run from it:&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/scripted-editor/scripted
+cd scripted
+npm install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you already have a clone of the scripted repo and want to update to the latest master, don&amp;rsquo;t
+forget that you also need to update external dependencies that may have changed. Run the following
+commands from the root of your clone.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git checkout master
+git pull
+git clean -fxd
+npm install   
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Running it&lt;/h3&gt;
+
+&lt;p&gt;Whatever route you took to installing it, just run:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;scr myfile.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When working with Scripted, think about it like using &lt;code&gt;vi&lt;/code&gt;/&lt;code&gt;emacs&lt;/code&gt;. From wherever you are in your terminal window you
+can launch Scripted and start editing a file.&lt;/p&gt;
+
+&lt;p&gt;Launching scripted will cause the Node.js server to start in the background.&lt;/p&gt;
+
+&lt;p&gt;Here are some of the more vital key bindings to use once the editor is open. Where &lt;code&gt;Cmd/Ctrl&lt;/code&gt; is specified it means &lt;code&gt;Cmd&lt;/code&gt; on Mac and &lt;code&gt;Ctrl&lt;/code&gt; on Linux/Windows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;F1&lt;/code&gt; - open help to show all key bindings (or press &amp;lsquo;?&amp;rsquo; in the top right)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Cmd/Ctrl+s&lt;/code&gt; - save!&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Cmd/Ctrl+Shift+E&lt;/code&gt; - open/close subeditor&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Cmd/Ctrl+Shift+F&lt;/code&gt; - open Find File dialog. Inside the dialog, you can search for files in the project by regular expression and:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Click&lt;/code&gt; a result to open it in main editor&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Shift+Click&lt;/code&gt; a result to open it in sub-editor&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Cmd/Ctrl+Click&lt;/code&gt; a result to open it in a new tab&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Cmd/Ctrl+Shift+o&lt;/code&gt; - open outline view. A dialog will present the functions and you can quickly navigate to them&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Cmd/Ctrl+F&lt;/code&gt; - in-file search&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+Space&lt;/code&gt; - content assist&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;F8&lt;/code&gt; - navigate to declaration&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Shift+F8&lt;/code&gt; - open declaration in subeditor&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Cmd/Ctrl+F8&lt;/code&gt; - navigate to declaration in new tab&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Alt+Shift+F&lt;/code&gt; - format&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;On the left hand side is a traditional navigator for opening different files. Above the editor is a breadcrumb, hover over a component to see other files in that directory.&lt;/p&gt;
+
+&lt;p&gt;The editor does support a degree of customization, see the section on the &lt;a href=&#34;https://github.com/scripted-editor/scripted/wiki/Features&#34;&gt;Features&lt;/a&gt; page.&lt;/p&gt;
+
+&lt;p&gt;Scripted receives most testing in Chrome and Firefox, you may need one of those browsers in order to get the most out of it.&lt;/p&gt;
+
+&lt;h1&gt;&lt;a style=&#34;display: block;&#34; name=&#34;anything-else-i-need-to-know-before-using-it?&#34; href=&#34;#anything-else-i-need-to-know-before-using-it?&#34;&gt;&lt;/a&gt;Anything else I need to know before using it?&lt;/h1&gt;
+
+&lt;p&gt;When you open Scripted on a file, it will attempt to infer the root of your project by locating the nearest &lt;code&gt;.git&lt;/code&gt;/&lt;code&gt;.project&lt;/code&gt; file
+in the hierarchy. Knowing the root is important because that is the scope in which searching and dependency analysis is done. If
+you don&amp;rsquo;t have one of these markers for the root, you can create an empty &lt;code&gt;.scripted&lt;/code&gt; file to indicate the root.&lt;/p&gt;
+
+&lt;h1&gt;&lt;a style=&#34;display: block;&#34; name=&#34;current-status&#34; href=&#34;#current-status&#34;&gt;&lt;/a&gt;Current status&lt;/h1&gt;
+
+&lt;p&gt;As of Jan 2013 the project is at version 0.3. There is a long way to go but the team have been using Scripted to develop Scripted for a while now.&lt;/p&gt;
+
+&lt;h1&gt;&lt;a style=&#34;display: block;&#34; name=&#34;further-reading&#34; href=&#34;#further-reading&#34;&gt;&lt;/a&gt;Further reading&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/scripted-editor/scripted/wiki/Features&#34;&gt;Features&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/scripted-editor/scripted/wiki/FAQ&#34;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/scripted-editor/scripted/wiki/FAQ#wiki-Troubleshooting&#34;&gt;Troubleshooting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/scripted-editor/scripted/wiki/Architecture&#34;&gt;Architecture&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1&gt;&lt;a style=&#34;display: block;&#34; name=&#34;where-can-i-ask-questions,-provide-feedback-or-raise-issues?&#34; href=&#34;#where-can-i-ask-questions,-provide-feedback-or-raise-issues?&#34;&gt;&lt;/a&gt;Where can I ask questions, provide feedback or raise issues?&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The &lt;a href=&#34;https://groups.google.com/forum/#!forum/scripted-dev&#34;&gt;scripted-dev google group&lt;/a&gt; is open for questions and discussion&lt;/li&gt;
+&lt;li&gt;The &lt;a href=&#34;https://issuetracker.springsource.com/browse/scripted&#34;&gt;issuetracker&lt;/a&gt; to raise issues or take a look and vote on existing issues.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1&gt;&lt;a style=&#34;display: block;&#34; name=&#34;what&#39;s-next-for-scripted?&#34; href=&#34;#what&#39;s-next-for-scripted?&#34;&gt;&lt;/a&gt;What&amp;rsquo;s next for Scripted?&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Even smarter inferencing, leading to better content assist and easier navigation.&lt;/li&gt;
+&lt;li&gt;More panes for the side panel. Currently there is just an editor pane but we intend to include search results panes,
+documentation, git information panes, perhaps code preview and simulated code execution panes. The intention will be
+for Scripted to try and automatically manage these where possible, so all the content on screen is kept relevant
+to the task at hand.&lt;/li&gt;
+&lt;li&gt;Simple plugin system.&lt;/li&gt;
+&lt;li&gt;Debugging. Exploring integration with tools like Chrome Dev Tools and node inspector.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you have more ideas for what you&amp;rsquo;d like to see, let us know via
+a &lt;a href=&#34;https://github.com/scripted-editor/scripted/issues&#34;&gt;Github issue&lt;/a&gt; or
+our &lt;a href=&#34;https://groups.google.com/forum/#!forum/scripted-dev&#34;&gt;scripted-dev&lt;/a&gt; discussion group.&lt;/p&gt;
+
+&lt;h1&gt;&lt;a style=&#34;display: block;&#34; name=&#34;can-i-contribute?&#34; href=&#34;#can-i-contribute?&#34;&gt;&lt;/a&gt;Can I contribute?&lt;/h1&gt;
+
+&lt;p&gt;Sure! Just press &lt;em&gt;Fork&lt;/em&gt; at the top of this github page and get coding. Before we accept pull requests we just need you to sign a simple contributor&amp;rsquo;s
+agreement - which you can find &lt;a href=&#34;https://support.springsource.com/spring_committer_signup&#34;&gt;here&lt;/a&gt;. Signing the contributor&amp;rsquo;s agreement does not grant anyone commit rights to the main repository, but it does mean that we can accept your contributions, and you will get an author credit if we do. Active contributors might be asked to join the core team, and given the ability to merge pull requests.
+Pull requests should ideally reference a JIRA ticket in the &lt;a href=&#34;https://issuetracker.springsource.com/browse/SCRIPTED&#34;&gt;issuetracker&lt;/a&gt; that details what the request is addressing.&lt;/p&gt;
+
+&lt;p&gt;The codebase is entirely JavaScript/HTML/CSS.&lt;/p&gt;
+
+&lt;p&gt;If you are keen to contribute but aren&amp;rsquo;t sure what to work on, take a look at
+the &lt;a href=&#34;https://github.com/scripted-editor/scripted/issues&#34;&gt;github issues&lt;/a&gt; for inspiration.
+The codebase is very new in places and isn&amp;rsquo;t that tricky to get to grips with.&lt;/p&gt;
+
+&lt;p&gt;If you don&amp;rsquo;t feel like coding but still want to contribute, please join the discussion on the issues and scripted-dev group.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>The Clojure Style Guide</title>
+      <link>http://blog.xuweirong.com/Clojure/The-Clojure-Style-Guide/</link>
+      <pubDate>2013-04-10 12:00:00 +0800</pubDate>
+      <description>&lt;p&gt;This Clojure style guide recommends best practices so that real-world Clojure
+programmers can write code that can be maintained by other real-world Clojure
+programmers. A style guide that reflects real-world usage gets used, and a
+style guide that holds to an ideal that has been rejected by the people it is
+supposed to help risks not getting used at all &amp;ndash; no matter how good it is.&lt;/p&gt;
+
+&lt;p&gt;The guide is separated into several sections of related rules. I&amp;rsquo;ve
+tried to add the rationale behind the rules (if it&amp;rsquo;s omitted I&amp;rsquo;ve
+assumed that is pretty obvious).&lt;/p&gt;
+
+&lt;p&gt;I didn&amp;rsquo;t come up with all the rules out of nowhere - they are mostly
+based on my extensive career as a professional software engineer,
+feedback and suggestions from members of the Clojure community, and
+various highly regarded Clojure programming resources, such as
+&lt;a href=&#34;http://www.clojurebook.com/&#34;&gt;&amp;ldquo;Clojure Programming&amp;rdquo;&lt;/a&gt;
+and &lt;a href=&#34;http://joyofclojure.com/&#34;&gt;&amp;ldquo;The Joy of Clojure&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The guide is still a work in progress - some sections are missing,
+others are incomplete, some rules are lacking examples, some rules
+don&amp;rsquo;t have examples that illustrate them clearly enough. In due time
+these issues will be addressed - just keep them in mind for now.&lt;/p&gt;
+
+&lt;p&gt;You can generate a PDF or an HTML copy of this guide using
+&lt;a href=&#34;https://github.com/TechnoGate/transmuter&#34;&gt;Transmuter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;table-of-contents&#34; href=&#34;#table-of-contents&#34;&gt;&lt;/a&gt;Table of Contents&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#source-code-layout--organization&#34;&gt;Source Code Layout &amp;amp; Organization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#syntax&#34;&gt;Syntax&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#naming&#34;&gt;Naming&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#collections&#34;&gt;Collections&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#mutation&#34;&gt;Mutation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#strings&#34;&gt;Strings&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#exceptions&#34;&gt;Exceptions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#macros&#34;&gt;Macros&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#comments&#34;&gt;Comments&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#comment-annotations&#34;&gt;Comment Annotations&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#existential&#34;&gt;Existential&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tooling&#34;&gt;Tooling&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;source-code-layout--organization&#34; href=&#34;#source-code-layout--organization&#34;&gt;&lt;/a&gt;Source Code Layout &amp;amp; Organization&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Nearly everybody is convinced that every style but their own is
+ugly and unreadable. Leave out the &amp;ldquo;but their own&amp;rdquo; and they&amp;rsquo;re
+probably right&amp;hellip; &lt;br/&gt;
+&amp;ndash; Jerry Coffin (on indentation)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Use two &lt;strong&gt;spaces&lt;/strong&gt; per indentation level. No hard tabs.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(when something
+  (something-else))
+
+
+;; bad - four spaces
+(when something
+    (something-else))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Align vertically function arguments.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(filter even?
+        (range 1 10))
+
+
+;; bad
+(filter even?
+  (range 1 10))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Align &lt;code&gt;let&lt;/code&gt; bindings and map keywords.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(let [thing1 &amp;quot;some stuff&amp;quot;
+      thing2 &amp;quot;other stuff&amp;quot;]
+  {:thing1 thing1
+   :thing2 thing2})
+
+
+;; bad
+(let [thing1 &amp;quot;some stuff&amp;quot;
+  thing2 &amp;quot;other stuff&amp;quot;]
+  {:thing1 thing1
+  :thing2 thing2})
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Optionally omit the new line between the function name and argument
+vector for &lt;code&gt;defn&lt;/code&gt; when there is no docstring.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(defn foo
+  [x]
+  (bar x))
+
+
+;; good
+(defn foo [x]
+  (bar x))
+
+
+;; bad
+(defn foo
+  [x] (bar x))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Optionally omit the new line between the argument vector and a short
+function body.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(defn foo [x]
+  (bar x))
+
+
+;; good for a small function body
+(defn foo [x] (bar x))
+
+
+;; good for multi-arity functions
+(defn foo
+  ([x] (bar x))
+  ([x y]
+    (if (predicate? x)
+      (bar x)
+      (baz x))))
+
+
+;; bad
+(defn foo
+  [x] (if (predicate? x)
+        (bar x)
+        (baz x)))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Indent each line of multi-line docstrings.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(defn foo
+  &amp;quot;Hello there. This is
+  a multi-line docstring.&amp;quot;
+  []
+  (bar))
+
+
+;; bad
+(defn foo
+  &amp;quot;Hello there. This is
+a multi-line docstring.&amp;quot;
+  []
+  (bar))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use Unix-style line endings. (*BSD/Solaris/Linux/OSX users are
+covered by default, Windows users have to be extra careful.)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;If you&amp;rsquo;re using Git you might want to add the following
+configuration setting to protect your project from Windows line
+endings creeping in:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;bash&#34;&gt;$ git config --global core.autocrlf true
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;If any text precedes an opening bracket(&lt;code&gt;(&lt;/code&gt;, &lt;code&gt;{&lt;/code&gt; and
+&lt;code&gt;[&lt;/code&gt;) or follows a closing bracket(&lt;code&gt;)&lt;/code&gt;, &lt;code&gt;}&lt;/code&gt; and &lt;code&gt;]&lt;/code&gt;), separate that
+text from that bracket with a space. Conversely, leave no space after
+an opening bracket and before following text, or after preceding text
+and before a closing bracket.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(foo (bar baz) quux)
+
+
+;; bad
+(foo(bar baz)quux)
+(foo ( bar baz ) quux)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Don&amp;rsquo;t use commas between the elements of sequential collection literals.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+[1 2 3]
+(1 2 3)
+
+
+;; bad
+[1, 2, 3]
+(1, 2, 3)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Consider enhancing the readability of map literals via judicious use
+of commas and line breaks.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+{:name &amp;quot;Bruce Wayne&amp;quot; :alter-ego &amp;quot;Batman&amp;quot;}
+
+
+;; good and arguably a bit more readable
+{:name &amp;quot;Bruce Wayne&amp;quot;
+ :alter-ego &amp;quot;Batman&amp;quot;}
+
+
+;; good and arguably more compact
+{:name &amp;quot;Bruce Wayne&amp;quot;, :alter-ego &amp;quot;Batman&amp;quot;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Place all trailing parentheses on a single line.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(when something
+  (something-else))
+
+
+;; bad
+(when something
+  (something-else)
+)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use empty lines between top-level forms.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(def x ...)
+
+
+(defn foo ...)
+
+
+;; bad
+(def x ...)
+(defn foo ...)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;An exception to the rule is the grouping of related &lt;code&gt;def&lt;/code&gt;s together.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(def min-rows 10)
+(def max-rows 20)
+(def min-cols 15)
+(def max-cols 30)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Do not place blank lines in the middle of a function or
+macro definition.  An exception can be made to indicate grouping of
+pairwise constructs as found in e.g. &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;cond&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Where feasible, avoid making lines longer than 80 characters.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Avoid trailing whitespace.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use one file per namespace.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Start every namespace with a comprehensive &lt;code&gt;ns&lt;/code&gt; form, comprised of
+&lt;code&gt;import&lt;/code&gt;s, &lt;code&gt;require&lt;/code&gt;s, &lt;code&gt;refer&lt;/code&gt;s and &lt;code&gt;use&lt;/code&gt;s.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;(ns examples.ns
+  (:refer-clojure :exclude [next replace remove])
+  (:require (clojure [string :as string]
+                     [set :as set])
+            [clojure.java.shell :as sh])
+  (:use (clojure zip xml))
+  (:import java.util.Date
+           java.text.SimpleDateFormat
+           (java.util.concurrent Executors
+                                 LinkedBlockingQueue)))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Avoid single-segment namespaces.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(ns example.ns)
+
+
+;; bad
+(ns example)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Avoid the use of overly long namespaces(i.e. with more than 5 segments).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Avoid functions longer than 10 LOC (lines of code). Ideally, most
+functions will be shorter than 5 LOC.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Avoid parameter lists with more than three or four positional parameters.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;syntax&#34; href=&#34;#syntax&#34;&gt;&lt;/a&gt;Syntax&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Avoid the use of namespace-manipulating functions like &lt;code&gt;require&lt;/code&gt; and
+&lt;code&gt;refer&lt;/code&gt;. They are entirely unnecessary outside of a REPL
+environment.&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;declare&lt;/code&gt; to enable forward references.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Prefer higher-order functions like &lt;code&gt;map&lt;/code&gt; to &lt;code&gt;loop/recur&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Prefer function pre and post conditions to checks inside a function&amp;rsquo;s body.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(defn foo [x]
+  {:pre [(pos? x)]}
+  (bar x))
+
+
+;; bad
+(defn foo [x]
+  (if (pos? x)
+    (bar x)
+    (throw (IllegalArgumentException &amp;quot;x must be a positive number!&amp;quot;)))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Don&amp;rsquo;t define vars inside functions.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; very bad
+(defn foo []
+  (def x 5)
+  ...)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Don&amp;rsquo;t shadow &lt;code&gt;clojure.core&lt;/code&gt; names with local bindings.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; bad - you&#39;re forced to used clojure.core/map fully qualified inside
+(defn foo [map]
+  ...)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;seq&lt;/code&gt; as a terminating condition to test whether a sequence is
+empty (this technique is sometimes called &lt;em&gt;nil punning&lt;/em&gt;).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(defn print-seq [s]
+  (when (seq s)
+    (prn (first s))
+    (recur (rest s))))
+
+
+;; bad
+(defn print-seq [s]
+  (when-not (empty? s)
+    (prn (first s))
+    (recur (rest s))))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;when&lt;/code&gt; instead of &lt;code&gt;(if ... (do ...)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(when pred
+  (foo)
+  (bar))
+
+
+;; bad
+(if pred
+  (do
+    (foo)
+    (bar)))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;if-let&lt;/code&gt; instead of &lt;code&gt;let&lt;/code&gt; + &lt;code&gt;if&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(if-let [result :foo]
+  (something-with result)
+  (something-else))
+
+
+;; bad
+(let [result :foo]
+  (if result
+    (something-with result)
+    (something-else)))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;when-let&lt;/code&gt; instead of &lt;code&gt;let&lt;/code&gt; + &lt;code&gt;when&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(when-let [result :foo]
+  (do-something-with result)
+  (do-something-more-with result))
+
+
+;; bad
+(let [result :foo]
+  (when result
+    (do-something-with result)
+    (do-something-more-with result)))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;if-not&lt;/code&gt; instead of &lt;code&gt;(if (not ...) ...)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(if-not (pred)
+  (foo))
+
+
+;; bad
+(if (not pred)
+  (foo))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;when-not&lt;/code&gt; instead of &lt;code&gt;(when (not ...) ...)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(when-not pred
+  (foo)
+  (bar))
+
+
+;; bad
+(when (not pred)
+  (foo)
+  (bar))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;when-not&lt;/code&gt; instead of &lt;code&gt;(if-not ... (do ...)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(when-not pred
+  (foo)
+  (bar))
+
+
+;; bad
+(if-not pred
+  (do
+    (foo)
+    (bar)))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;not=&lt;/code&gt; instead of &lt;code&gt;(not (= ...))&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(not= foo bar)
+
+
+;; bad
+(not (= foo bar))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Prefer &lt;code&gt;%&lt;/code&gt; over &lt;code&gt;%1&lt;/code&gt; in function literals with only one parameter.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+#(Math/round %)
+
+
+;; bad
+#(Math/round %1)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Prefer &lt;code&gt;%1&lt;/code&gt; over &lt;code&gt;%&lt;/code&gt; in function literals with more than one parameter.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+#(Math/pow %1 %2)
+
+
+;; bad
+#(Math/pow % %2)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Don&amp;rsquo;t wrap functions in anonymous functions when you don&amp;rsquo;t need to.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(filter even? (range 1 10))
+
+
+;; bad
+(filter #(even? %) (range 1 10))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Don&amp;rsquo;t use function literals if the function body will consist of
+more than one form.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(fn [x]
+  (println x)
+  (* x 2))
+
+
+;; bad (you need an explicit do form)
+#(do (println %)
+     (* % 2))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Favor the use of &lt;code&gt;complement&lt;/code&gt; versus the use of an anonymous function.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(filter (complement some-pred?) coll)
+
+
+;; bad
+(filter #(not (some-pred? %)) coll)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This rule should obviously be ignored if the complementing predicate
+exists in the form of a separate function (e.g. &lt;code&gt;even?&lt;/code&gt; and &lt;code&gt;odd?&lt;/code&gt;).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Leverage &lt;code&gt;comp&lt;/code&gt; when it would yield simpler code.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(map #(capitalize (trim %)) [&amp;quot;top &amp;quot; &amp;quot; test &amp;quot;])
+
+
+;; better
+(map (comp capitalize trim) [&amp;quot;top &amp;quot; &amp;quot; test &amp;quot;])
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Leverage &lt;code&gt;partial&lt;/code&gt; when it would yield simpler code.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(map #(+ 5 %) (range 1 10))
+
+
+;; (arguably) better
+(map (partial + 5) (range 1 10))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Prefer the use of the threading macros &lt;code&gt;-&amp;gt;&lt;/code&gt; (thread-first) and &lt;code&gt;-&amp;gt;&amp;gt;&lt;/code&gt;
+(thread-last) to heavy form nesting.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(-&amp;gt; [1 2 3]
+    reverse
+    (conj 4)
+    prn)
+
+
+;; not as good
+(prn (conj (reverse [1 2 3])
+           4))
+
+
+;; good
+(-&amp;gt;&amp;gt; (range 1 10)
+     (filter even?)
+     (map (partial * 2)))
+
+
+;; not as good
+(map (partial * 2)
+     (filter even? (range 1 10)))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Prefer &lt;code&gt;..&lt;/code&gt; to &lt;code&gt;-&amp;gt;&lt;/code&gt; when chaining method calls in Java interop.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(-&amp;gt; (System/getProperties) (.get &amp;quot;os.name&amp;quot;))
+
+
+;; better
+(.. System getProperties (get &amp;quot;os.name&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;:else&lt;/code&gt; as the catch-all test expression in &lt;code&gt;cond&lt;/code&gt; and &lt;code&gt;condp&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(cond
+  (&amp;lt; n 0) &amp;quot;negative&amp;quot;
+  (&amp;gt; n 0) &amp;quot;positive&amp;quot;
+  :else &amp;quot;zero&amp;quot;))
+
+
+;; bad
+(cond
+  (&amp;lt; n 0) &amp;quot;negative&amp;quot;
+  (&amp;gt; n 0) &amp;quot;positive&amp;quot;
+  true &amp;quot;zero&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Prefer &lt;code&gt;condp&lt;/code&gt; instead of &lt;code&gt;cond&lt;/code&gt; when the predicate &amp;amp; expression don&amp;rsquo;t
+change.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(cond
+  (= x 10) :ten
+  (= x 20) :twenty
+  (= x 30) :forty
+  :else :dunno)
+
+
+;; much better
+(condp = x
+  10 :ten
+  20 :twenty
+  30 :forty
+  :dunno)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Prefer &lt;code&gt;case&lt;/code&gt; instead of &lt;code&gt;cond&lt;/code&gt; or &lt;code&gt;condp&lt;/code&gt; when test expressions are
+compile-time constants.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(cond
+  (= x 10) :ten
+  (= x 20) :twenty
+  (= x 30) :forty
+  :else :dunno)
+
+
+;; better
+(condp = x
+  10 :ten
+  20 :twenty
+  30 :forty
+  :dunno)
+
+
+;; best
+(case x
+  10 :ten
+  20 :twenty
+  30 :forty
+  :dunno)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use short forms in &lt;code&gt;cond&lt;/code&gt; and related.  If not possible give visual
+hints for the pairwise grouping with comments or empty lines.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(cond
+  (test1) (action1)
+  (test2) (action2)
+  :else   (default-action))
+
+
+;; okish
+(cond
+;; test case 1
+(test1)
+(long-function-name-which-requires-a-new-line
+   (complicated-sub-form
+      (-&amp;gt; &#39;which-spans
+          multiple-lines)))
+
+
+(test2)
+(another-very-long-function-name
+   (yet-another-sub-form
+      (-&amp;gt; &#39;which-spans
+          multiple-lines)))
+
+
+:else
+(the-fall-through-default-case
+  (which-also-spans &#39;multiple
+                    &#39;lines)))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use a &lt;code&gt;set&lt;/code&gt; as a predicate when appropriate.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; bad
+(remove #(= % 0) [0 1 2 3 4 5])
+
+
+;; good
+(remove #{0} [0 1 2 3 4 5])
+
+
+;; bad
+(count (filter #(or (= % \a)
+                    (= % \e)
+                    (= % \i)
+                    (= % \o)
+                    (= % \u))
+               &amp;quot;mary had a little lamb&amp;quot;))
+
+
+;; good
+(count (filter #{\a \e \i \o \u} &amp;quot;mary had a little lamb&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;(inc x)&lt;/code&gt; &amp;amp; &lt;code&gt;(dec x)&lt;/code&gt; instead of &lt;code&gt;(+ x 1)&lt;/code&gt; and &lt;code&gt;(- x 1)&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;(pos? x)&lt;/code&gt;, &lt;code&gt;(neg? x)&lt;/code&gt; &amp;amp; &lt;code&gt;(zero? x)&lt;/code&gt; instead of &lt;code&gt;(&amp;gt; x 0)&lt;/code&gt;,
+&lt;code&gt;(&amp;lt; x 0)&lt;/code&gt; &amp;amp; &lt;code&gt;(= x 0)&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use the sugared Java interop forms.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;;; object creation
+;; good
+(java.util.ArrayList. 100)
+
+
+;; bad
+(new java.util.ArrayList 100)
+
+
+;;; static method invocation
+;; good
+(Math/pow 2 10)
+
+
+;; bad
+(. Math pow 2 10)
+
+
+;;; instance method invocation
+;; good
+(.substring &amp;quot;hello&amp;quot; 1 3)
+
+
+;; bad
+(. &amp;quot;hello&amp;quot; substring 1 3)
+
+
+;;; static field access
+;; good
+Integer/MAX_VALUE
+
+
+;; bad
+(. Integer MAX_VALUE)
+
+
+;;; instance field access
+;; good
+(.someField some-object)
+
+
+;; bad
+(. some-object some-field)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use the compact metadata notation for metadata that contains only
+slots whose keys are keywords and whose value is boolean &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(def ^:private a 5)
+
+
+;; bad
+(def ^{:private true} a 5)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Denote private parts of your code.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(defn- private-fun [] ...)
+
+
+(def ^:private private-var ...)
+
+
+;; bad
+(defn private-fun [] ...) ; not private at all
+
+
+(defn ^:private private-fun [] ...) ; overly verbose
+
+
+(def private-var ...) ; not private at all
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Be careful regarding what exactly do you attach metadata to.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; we attach the metadata to the var referenced by a
+(def ^:private a 5)
+(meta a) ;=&amp;gt; nil
+(meta #&#39;a) ;=&amp;gt; {:private true}
+
+
+;; we attach the metadata to the value 5
+(def a ^:private 5)
+(meta a) ;=&amp;gt; {:private true}
+(meta #&#39;a) ;=&amp;gt; nil
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;naming&#34; href=&#34;#naming&#34;&gt;&lt;/a&gt;Naming&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The only real difficulties in programming are cache invalidation and
+naming things. &lt;br/&gt;
+&amp;ndash; Phil Karlton&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;When naming namespaces favor the following two schemas:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;project.module&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;organization.project.module&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;lisp-case&lt;/code&gt; in composite namespace segments(e.g. &lt;code&gt;bruce.project-euler&lt;/code&gt;)&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;lisp-case&lt;/code&gt; for function and variable names.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(def some-var ...)
+(defn some-fun ...)
+
+
+;; bad
+(def someVar ...)
+(defn somefun ...)
+(def some_fun ...)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;CamelCase&lt;/code&gt; for protocols, records, structs and types. (Keep
+acronyms like HTTP, RFC, XML uppercase.)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The names of predicate methods (methods that return a boolean value)
+should end in a question mark.
+(i.e. &lt;code&gt;even?&lt;/code&gt;).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(defn palindrome? ...)
+
+
+;; bad
+(defn palindrome-p ...) ; Common Lisp style
+(defn is-palindrome ...) ; Java style
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The names of functions/macros that are not safe in STM transactions
+should end with an exclamation mark. (i.e. &lt;code&gt;reset!&lt;/code&gt;)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;-&amp;gt;&lt;/code&gt; instead of &lt;code&gt;to&lt;/code&gt; in the names of conversion functions.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(defn f-&amp;gt;c ...)
+
+
+;; not so good
+(defn f-to-c ...)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;*earmuffs*&lt;/code&gt; for things intended for rebinding (ie. are dynamic).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(def ^:dynamic *a* 10)
+
+
+;; bad
+(def ^:dynamic a 10)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Don&amp;rsquo;t use a special notation for constants; everything is assumed a constant
+unless specified otherwise.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;_&lt;/code&gt; for destructuring targets and formal arguments names whose
+value will be ignored by the code at hand.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(let [[a b _ c] [1 2 3 4]]
+  (println a b c))
+
+
+(dotimes [_ 3]
+  (println &amp;quot;Hello!&amp;quot;))
+
+
+;; bad
+(let [[a b c d] [1 2 3 4]]
+  (println a b d))
+
+
+(dotimes [i 3]
+  (println &amp;quot;Hello!&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Follow &lt;code&gt;clojure.core&lt;/code&gt;&amp;rsquo;s example for idiomatic names like &lt;code&gt;pred&lt;/code&gt; and &lt;code&gt;coll&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;in functions:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;f&lt;/code&gt;, &lt;code&gt;g&lt;/code&gt;, &lt;code&gt;h&lt;/code&gt; - function input&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;n&lt;/code&gt; - integer input usually a size&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;index&lt;/code&gt; - integer index&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;x&lt;/code&gt;, &lt;code&gt;y&lt;/code&gt; - numbers&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s&lt;/code&gt; - string input&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;coll&lt;/code&gt; - a collection&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pred&lt;/code&gt; - a predicate closure&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp; more&lt;/code&gt; - variadic input&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;in macros:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;expr&lt;/code&gt; - an expression&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;body&lt;/code&gt; - a macro body&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;binding&lt;/code&gt; - a macro binding vector&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;collections&#34; href=&#34;#collections&#34;&gt;&lt;/a&gt;Collections&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;It is better to have 100 functions operate on one data structure
+than to have 10 functions operate on 10 data structures. &lt;br/&gt;
+&amp;ndash; Alan J. Perlis&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Avoid the use of lists for generic data storage (unless a list is
+exactly what you need).&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Prefer the use of keywords for hash keys.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+{:name &amp;quot;Bruce&amp;quot; :age 30}
+
+
+;; bad
+{&amp;quot;name&amp;quot; &amp;quot;Bruce&amp;quot; &amp;quot;age&amp;quot; 30}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Prefer the use of the literal collection syntax where
+applicable. However, when defining sets, only use literal syntax
+when the values are compile-time constants&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+[1 2 3]
+#{1 2 3}
+(hash-set (func1) (func2)) ; values determined at runtime
+
+
+;; bad
+(vector 1 2 3)
+(hash-set 1 2 3)
+#{(func1) (func2)} ; will throw runtime exception if (func1) = (func2)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Avoid accessing collection members by index whenever possible.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Prefer the use of keywords as functions for retrieving values from
+maps, where applicable.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;(def m {:name &amp;quot;Bruce&amp;quot; :age 30})
+
+
+;; good
+(:name m)
+
+
+;; bad - too verbose
+(get m :name)
+
+
+;; bad - susceptible to NullPointerException
+(m :name)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Leverage the fact that most collections are functions of their elements.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(filter #{\a \e \o \i \u} &amp;quot;this is a test&amp;quot;)
+
+
+;; bad - too ugly to share
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Leverage the fact that keywords can be used as functions of a collection.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;((juxt :a :b) {:a &amp;quot;ala&amp;quot; :b &amp;quot;bala&amp;quot;})
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Avoid the use of transient collections, except for
+performance-critical portions of the code.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Avoid the use of Java collections.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Avoid the use of Java arrays, except for interop scenarios and
+performance-critical code dealing heavily with primitive types.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;mutation&#34; href=&#34;#mutation&#34;&gt;&lt;/a&gt;Mutation&lt;/h2&gt;
+
+&lt;h3&gt;Refs&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Consider wrapping all I/O calls with the &lt;code&gt;io!&lt;/code&gt; macro to avoid nasty
+surprises if you accidentally end up calling such code in a
+transaction.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Avoid the use of &lt;code&gt;ref-set&lt;/code&gt; whenever possible.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;(def r (ref 0))
+
+
+;; good
+(dosync (alter r + 5))
+
+
+;; bad
+(dosync (ref-set r 5))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Try to keep the size of transactions (the amount of work encapsulated in them)
+as small as possible.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Avoid having both short- and long-running transactions interacting
+with the same Ref.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Agents&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Use &lt;code&gt;send&lt;/code&gt; only for actions that are CPU bound and don&amp;rsquo;t block on I/O
+or other threads.&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;send-off&lt;/code&gt; for actions that might block, sleep, or otherwise tie
+up the thread.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Atoms&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Avoid atom updates inside STM transactions.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Avoid the use of &lt;code&gt;reset!&lt;/code&gt; whenever possible.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;(def a (atom 0))
+
+
+;; good
+(swap! a + 5)
+
+
+;; bad
+(reset! a 5)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;strings&#34; href=&#34;#strings&#34;&gt;&lt;/a&gt;Strings&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Prefer string manipulation functions from &lt;code&gt;clojure.string&lt;/code&gt; over Java interop or rolling your own.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(clojure.string/upper-case &amp;quot;bruce&amp;quot;)
+
+
+;; bad
+(.toUpperCase &amp;quot;bruce&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;exceptions&#34; href=&#34;#exceptions&#34;&gt;&lt;/a&gt;Exceptions&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Reuse existing exception types. Idiomatic Clojure code, when it does
+throw an exception, throws an exception of a standard type
+(e.g. &lt;code&gt;java.lang.IllegalArgumentException&lt;/code&gt;,
+&lt;code&gt;java.lang.UnsupportedOperationException&lt;/code&gt;,
+&lt;code&gt;java.lang.IllegalStateException&lt;/code&gt;, &lt;code&gt;java.io.IOException&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Favor &lt;code&gt;with-open&lt;/code&gt; over &lt;code&gt;finally&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;macros&#34; href=&#34;#macros&#34;&gt;&lt;/a&gt;Macros&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Don&amp;rsquo;t write a macro if a function will do.&lt;/li&gt;
+&lt;li&gt;Create an example of a macro usage first and the macro afterwards.&lt;/li&gt;
+&lt;li&gt;Break complicated macros into smaller functions whenever possible.&lt;/li&gt;
+&lt;li&gt;A macro should usually just provide syntactic sugar and the core of
+the macro should be a plain function. Doing so will improve
+composability.&lt;/li&gt;
+&lt;li&gt;Prefer syntax-quoted forms over building lists manually.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;comments&#34; href=&#34;#comments&#34;&gt;&lt;/a&gt;Comments&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Good code is its own best documentation. As you&amp;rsquo;re about to add a
+comment, ask yourself, &amp;ldquo;How can I improve the code so that this
+comment isn&amp;rsquo;t needed?&amp;rdquo; Improve the code and then document it to make
+it even clearer. &lt;br/&gt;
+&amp;ndash; Steve McConnell&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Write self-documenting code and ignore the rest of this section. Seriously!&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Write heading comments with at least four semicolons.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Write top-level comments with three semicolons.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Write comments on a particular fragment of code before that fragment
+and aligned with it, using two semicolons.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Write margin comments with one semicolon.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Always have at least one space between the semicolon
+and the text that follows it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;;;; Frob Grovel
+
+
+;;; This section of code has some important implications:
+;;;   1. Foo.
+;;;   2. Bar.
+;;;   3. Baz.
+
+
+(defn fnord [zarquon]
+  ;; If zob, then veeblefitz.
+  (quux zot
+        mumble             ; Zibblefrotz.
+        frotz))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Comments longer than a word begin with a capital letter and use
+punctuation. Separate sentences with
+&lt;a href=&#34;http://en.wikipedia.org/wiki/Sentence_spacing&#34;&gt;one space&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Avoid superfluous comments.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; bad
+(inc counter) ; increments counter by one
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Keep existing comments up-to-date. An outdated comment is worse than no comment
+at all.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Prefer the use of the &lt;code&gt;#_&lt;/code&gt; reader macro over a regular comment when
+you need to comment out a particular form.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;;; good
+(+ foo #_(bar x) delta)
+
+
+;; bad
+(+ foo
+   ;; (bar x)
+   delta)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Good code is like a good joke - it needs no explanation. &lt;br/&gt;
+&amp;ndash; Russ Olsen&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Avoid writing comments to explain bad code. Refactor the code to
+make it self-explanatory. (Do or do not - there is no try. &amp;ndash;Yoda)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Comment Annotations&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Annotations should usually be written on the line immediately above
+the relevant code.&lt;/li&gt;
+&lt;li&gt;The annotation keyword is followed by a colon and a space, then a note
+describing the problem.&lt;/li&gt;
+&lt;li&gt;If multiple lines are required to describe the problem, subsequent
+lines should be indented as much as the first one.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Tag the annotation with your initials and a date so its relevance can
+be easily verified.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;(defn some-fun
+  []
+  ;; FIXME: This has crashed occasionally since v1.2.3. It may
+  ;;        be related to the BarBazUtil upgrade. (xz 13-1-31)
+  (baz))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;In cases where the problem is so obvious that any documentation would
+be redundant, annotations may be left at the end of the offending line
+with no note. This usage should be the exception and not the rule.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Clojure&#34;&gt;(defn bar
+  []
+  (sleep 100)) ; OPTIMIZE
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;TODO&lt;/code&gt; to note missing features or functionality that should be
+added at a later date.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;FIXME&lt;/code&gt; to note broken code that needs to be fixed.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;OPTIMIZE&lt;/code&gt; to note slow or inefficient code that may cause
+performance problems.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;HACK&lt;/code&gt; to note &amp;ldquo;code smells&amp;rdquo; where questionable coding practices
+were used and should be refactored away.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;REVIEW&lt;/code&gt; to note anything that should be looked at to confirm it
+is working as intended. For example: &lt;code&gt;REVIEW: Are we sure this is how the
+client does X currently?&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use other custom annotation keywords if it feels appropriate, but be
+sure to document them in your project&amp;rsquo;s &lt;code&gt;README&lt;/code&gt; or similar.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;existential&#34; href=&#34;#existential&#34;&gt;&lt;/a&gt;Existential&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Code in a functional way, avoiding mutation when that makes sense.&lt;/li&gt;
+&lt;li&gt;Be consistent. In an ideal world, be consistent with these guidelines.&lt;/li&gt;
+&lt;li&gt;Use common sense.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;&lt;a style=&#34;display: block;&#34; name=&#34;tooling&#34; href=&#34;#tooling&#34;&gt;&lt;/a&gt;Tooling&lt;/h2&gt;
+
+&lt;p&gt;There are some tools created by the Clojure community that might aid you
+in your endeavor to write idiomatic Clojure code.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/technomancy/slamhound&#34;&gt;Slamhound&lt;/a&gt; is a tool that
+will automatically generate proper &lt;code&gt;ns&lt;/code&gt; declarations from your
+existing code.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jonase/kibit&#34;&gt;kibit&lt;/a&gt; is a static code analyzer
+for Clojure which uses
+&lt;a href=&#34;https://github.com/clojure/core.logic&#34;&gt;core.logic&lt;/a&gt; to search for
+patterns of code for which there might exist a more idiomatic
+function or macro.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1&gt;&lt;a style=&#34;display: block;&#34; name=&#34;contributing&#34; href=&#34;#contributing&#34;&gt;&lt;/a&gt;Contributing&lt;/h1&gt;
+
+&lt;p&gt;Nothing written in this guide is set in stone. It&amp;rsquo;s my desire to work
+together with everyone interested in Clojure coding style, so that we could
+ultimately create a resource that will be beneficial to the entire Clojure
+community.&lt;/p&gt;
+
+&lt;p&gt;Feel free to open tickets or send pull requests with improvements. Thanks in
+advance for your help!&lt;/p&gt;
+
+&lt;h1&gt;&lt;a style=&#34;display: block;&#34; name=&#34;license&#34; href=&#34;#license&#34;&gt;&lt;/a&gt;License&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.creativecommons.org/l/by/3.0/88x31.png&#34; alt=&#34;Creative Commons License&#34; /&gt;
+
+This work is licensed under a
+&lt;a href=&#34;http://creativecommons.org/licenses/by/3.0/deed.en_US&#34;&gt;Creative Commons Attribution 3.0 Unported License&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1&gt;&lt;a style=&#34;display: block;&#34; name=&#34;spread-the-word&#34; href=&#34;#spread-the-word&#34;&gt;&lt;/a&gt;Spread the Word&lt;/h1&gt;
+
+&lt;p&gt;A community-driven style guide is of little use to a community that
+doesn&amp;rsquo;t know about its existence. Tweet about the guide, share it with
+your friends and colleagues. Every comment, suggestion or opinion we
+get makes the guide just a little bit better. And we want to have the
+best possible guide, don&amp;rsquo;t we?&lt;/p&gt;
+
+&lt;p&gt;Cheers,&lt;br/&gt;
+&lt;a href=&#34;https://twitter.com/bbatsov&#34;&gt;Bozhidar&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>你的第一篇博客</title>
+      <link>http://blog.xuweirong.com/2012/new-born.html</link>
+      <pubDate>2012-12-22 12:00:00 +0800</pubDate>
+      <description>&lt;h1&gt;感谢你使用Gor编写博客&lt;/h1&gt;
+
+&lt;h2&gt;本文位于 posts/first-blog.md , 你可以任何删掉,修改这个文件&lt;/h2&gt;
+
+&lt;p&gt;文件开头是当前文章的元数据&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;date为自动生成, 当然,你可以修改,这是你的自由&lt;/li&gt;
+&lt;li&gt;permalink 可以是固定地址,也可以由gor为你自动生成&lt;/li&gt;
+&lt;li&gt;categories 就是分类, 可以多个&lt;/li&gt;
+&lt;li&gt;tags 同理,多个标签也是很常见的&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;请确保文件使用UTF8 without BOM编码&lt;/p&gt;
+
+&lt;h2&gt;你可以通过执行下面的语句来新建一篇博客:&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;gor post 文章标题
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;编译你的博客,并预览之&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;gor compile #编译
+gor http
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后打开你的浏览器,访问 &lt;a href=&#34;http://127.0.0.1:8080&#34;&gt;http://127.0.0.1:8080&lt;/a&gt; 来预览&lt;/p&gt;
+
+&lt;h2&gt;你将使用Markdown来编写博客&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://wowubuntu.com/markdown/&#34;&gt;Markdown 语法中文版&lt;/a&gt; 能让你快速入门其语法&lt;/p&gt;
+
+&lt;p&gt;相信&lt;a href=&#34;http://markdownpad.com&#34;&gt;MarkdownPad&lt;/a&gt;或&lt;a href=&#34;http://code.google.com/p/liteide/&#34;&gt;liteide&lt;/a&gt;会是你的编写博客的好帮手&lt;/p&gt;
+
+&lt;h2&gt;如果你打算部署到github的pages上&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;申请github帐户&lt;/li&gt;
+&lt;li&gt;新建一个库 username.github.com 即你的用户名命名的地址&lt;/li&gt;
+&lt;li&gt;将compiled目录,作为根路径,提交上去github.com上&lt;/li&gt;
+&lt;li&gt;稍等几分钟, 你即可通过 &lt;a href=&#34;http://username.github.com&#34;&gt;http://username.github.com&lt;/a&gt; 访问到&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;附上git教程 &lt;a href=&#34;http://gitbook.liuhui998.com/&#34;&gt;GitBook中文版&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;一般来说,你只需要几个简单的git命令就足以应付大部分需求(仅示例)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone git://github.com/wendal/wendal.net.git
+git add -A
+git commit -m &amp;quot;...&amp;quot;
+git pull
+git push
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用以下命令获取帮助或访问gor官网
+    gor help&lt;/p&gt;
+
+&lt;h2&gt;用gor编写博客将会是一件很开心的事,如果有任何意见或建议,欢迎到 &lt;a href=&#34;http://github.com/wendal/gor&#34;&gt;gor的官网&lt;/a&gt; 提交issue&lt;/h2&gt;
+
+&lt;h1&gt;祝你使用愉快&lt;/h1&gt;
+</description>
+    </item>
+  </channel>
+</rss>

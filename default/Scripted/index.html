@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Scripted</title>
+  
+    <meta name="author" content="David Xu">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/twitter/stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/stylesheets/style.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/widgets/google_prettify/stylesheets/twitter-bootstrap.css" type="text/css" rel="stylesheet" media="all">
+ 
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">Blog Title</a>
+          <ul class="nav">
+            
+              
+
+
+  <li><a href="/archive">Archive</a></li>
+
+
+            
+              
+
+
+  <li><a href="/tags">Tags</a></li>
+
+
+            
+              
+
+
+  <li><a href="/categories">Categories</a></li>
+
+
+            
+              
+
+
+  <li><a href="/pages">Pages</a></li>
+
+
+            
+              
+
+
+  <li><a href="/about">About Me</a></li>
+
+
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        <div class="page-header">
+  <h1>Scripted </h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <h1><a style="display: block;" name="welcome-to-scripted" href="#welcome-to-scripted"></a>Welcome to Scripted</h1>
+
+<p><a href="https://travis-ci.org/scripted-editor/scripted">![Build Status](https://travis-ci.org/scripted-editor/scripted.png?branch=master)</a></p>
+
+<h2><a style="display: block;" name="what-is-scripted?" href="#what-is-scripted?"></a>What is Scripted?</h2>
+
+<p>Scripted is a fast and lightweight code editor with an initial focus on JavaScript editing.
+Scripted is a browser based editor and the editor itself is served from a locally running Node.js
+server instance.</p>
+
+<p><center>
+<img src="http://dist.springsource.org/release/SCRIPTED/screenshot2.png" width="736" height="451"/>
+</center></p>
+
+<p>What are the key features?</p>
+
+<ul>
+<li>Fast startup, lightweight.</li>
+<li>Syntax highlighting for JavaScript, HTML and CSS.</li>
+<li>Errors and warnings:
+
+<ul>
+<li>JSHint is integrated to provide error/warning markers on JavaScript code.</li>
+<li>AMD and CommonJS module resolution: there is basic resolution where unresolved references will be marked as errors.</li>
+</ul></li>
+<li>Content assist:
+
+<ul>
+<li>Basic content assist for HTML, CSS</li>
+<li>For JavaScript, content assist is driven by a type inferencing engine which is aware of AMD/CommonJS module
+dependencies and also uses JSDoc comments to help it understand the code.</li>
+</ul></li>
+<li>Hovers: hovering over a JavaScript identifier will bring up the inferred type signature.</li>
+<li>Navigation:
+
+<ul>
+<li>press F8 on an identifier (that the inferencer has recognized) and the editor will navigate to the declaration.</li>
+<li>this also works on module identifiers (e.g. in <code>define()</code> clauses)</li>
+</ul></li>
+<li>Formatting: JSbeautify is integrated</li>
+<li>Sidepanel: alongside the main editor a sidepanel can be opened - currently this can be used to host a second editor.</li>
+<li>Key binding to external command: Key bindings in the editor can invoke external commands (less, mvn, etc)</li>
+</ul>
+
+<p>The editor is actually the <a href="http://www.eclipse.org/orion/">Eclipse Orion</a> editor with a few additional bells and whistles.
+Anyone familiar with editing in Eclipse will immediately know many of the key bindings
+the Scripted editor supports.</p>
+
+<p>Many of these are covered in this introductory screencast:<br>
+<a href="http://dist.springsource.org/release/SCRIPTED/Scripted2.mov"><img align="center" src="http://dist.springsource.org/release/SCRIPTED/posterScripted2.png" width="428" height="263"/></a></p>
+
+<h1><a style="display: block;" name="how-do-i-try-it-out?" href="#how-do-i-try-it-out?"></a>How do I try it out?</h1>
+
+<p>The only pre-req for trying it out is that you have Node.js installed. Grab it from here: <a href="http://nodejs.org">http://nodejs.org/</a>.
+The team has been testing with a range of versions from 0.6 to 0.8 but haven&rsquo;t tested all of them exhaustively. It is recommended
+that you try to use the latest (0.8.16 at time of writing).</p>
+
+<h3>Installing the most recent release via npm</h3>
+
+<pre><code>npm install -g scripted
+</code></pre>
+
+<p>(possibly with a <code>sudo</code> prefix on linux/mac). This will install the most recently published release. There are no further steps if installing via this route and <code>scr</code> command will immediately be available to launch Scripted.</p>
+
+<h3>Installing the very latest code via npm</h3>
+
+<p>This will install directly from master.</p>
+
+<pre><code>npm install -g https://github.com/scripted-editor/scripted/tarball/master
+</code></pre>
+
+<p>(again possibly with a <code>sudo</code>). Master is under constant development so you may see a hiccup or two but we try to keep it fully functional.</p>
+
+<h3>Download a packaged zip</h3>
+
+<p><a href="http://dist.springsource.org/release/SCRIPTED/scripted_v0.3.0.zip">Version 0.3.0 zip</a><br>
+<a href="http://scripted-editor.github.com/scripted/release_notes/0_3_0/scripted_0_3_0.html">Version 0.3.0 Release Notes</a></p>
+
+<p>Once unzipped, ensure the bin folder contents are executable on mac/linux: <code>chmod 755 bin/*</code></p>
+
+<p>And add the bin folder to your PATH.</p>
+
+<pre><code>mac/linux: export PATH=&lt;pathToUnzipLocationOrClone&gt;/bin:$PATH
+win: set PATH=&lt;pathToUnzipLocationOrClone&gt;\bin;%PATH%
+</code></pre>
+
+<h3>Clone the repository and install it or run from it:</h3>
+
+<pre><code>git clone https://github.com/scripted-editor/scripted
+cd scripted
+npm install
+</code></pre>
+
+<p>If you already have a clone of the scripted repo and want to update to the latest master, don&rsquo;t
+forget that you also need to update external dependencies that may have changed. Run the following
+commands from the root of your clone.</p>
+
+<pre><code>git checkout master
+git pull
+git clean -fxd
+npm install   
+</code></pre>
+
+<h3>Running it</h3>
+
+<p>Whatever route you took to installing it, just run:</p>
+
+<pre><code>scr myfile.js
+</code></pre>
+
+<p>When working with Scripted, think about it like using <code>vi</code>/<code>emacs</code>. From wherever you are in your terminal window you
+can launch Scripted and start editing a file.</p>
+
+<p>Launching scripted will cause the Node.js server to start in the background.</p>
+
+<p>Here are some of the more vital key bindings to use once the editor is open. Where <code>Cmd/Ctrl</code> is specified it means <code>Cmd</code> on Mac and <code>Ctrl</code> on Linux/Windows:</p>
+
+<ul>
+<li><code>F1</code> - open help to show all key bindings (or press &lsquo;?&rsquo; in the top right)</li>
+<li><code>Cmd/Ctrl+s</code> - save!</li>
+<li><code>Cmd/Ctrl+Shift+E</code> - open/close subeditor</li>
+<li><code>Cmd/Ctrl+Shift+F</code> - open Find File dialog. Inside the dialog, you can search for files in the project by regular expression and:
+
+<ul>
+<li><code>Click</code> a result to open it in main editor</li>
+<li><code>Shift+Click</code> a result to open it in sub-editor</li>
+<li><code>Cmd/Ctrl+Click</code> a result to open it in a new tab</li>
+</ul></li>
+<li><code>Cmd/Ctrl+Shift+o</code> - open outline view. A dialog will present the functions and you can quickly navigate to them</li>
+<li><code>Cmd/Ctrl+F</code> - in-file search</li>
+<li><code>Ctrl+Space</code> - content assist</li>
+<li><code>F8</code> - navigate to declaration</li>
+<li><code>Shift+F8</code> - open declaration in subeditor</li>
+<li><code>Cmd/Ctrl+F8</code> - navigate to declaration in new tab</li>
+<li><code>Alt+Shift+F</code> - format</li>
+</ul>
+
+<p>On the left hand side is a traditional navigator for opening different files. Above the editor is a breadcrumb, hover over a component to see other files in that directory.</p>
+
+<p>The editor does support a degree of customization, see the section on the <a href="https://github.com/scripted-editor/scripted/wiki/Features">Features</a> page.</p>
+
+<p>Scripted receives most testing in Chrome and Firefox, you may need one of those browsers in order to get the most out of it.</p>
+
+<h1><a style="display: block;" name="anything-else-i-need-to-know-before-using-it?" href="#anything-else-i-need-to-know-before-using-it?"></a>Anything else I need to know before using it?</h1>
+
+<p>When you open Scripted on a file, it will attempt to infer the root of your project by locating the nearest <code>.git</code>/<code>.project</code> file
+in the hierarchy. Knowing the root is important because that is the scope in which searching and dependency analysis is done. If
+you don&rsquo;t have one of these markers for the root, you can create an empty <code>.scripted</code> file to indicate the root.</p>
+
+<h1><a style="display: block;" name="current-status" href="#current-status"></a>Current status</h1>
+
+<p>As of Jan 2013 the project is at version 0.3. There is a long way to go but the team have been using Scripted to develop Scripted for a while now.</p>
+
+<h1><a style="display: block;" name="further-reading" href="#further-reading"></a>Further reading</h1>
+
+<ul>
+<li><a href="https://github.com/scripted-editor/scripted/wiki/Features">Features</a></li>
+<li><a href="https://github.com/scripted-editor/scripted/wiki/FAQ">FAQ</a></li>
+<li><a href="https://github.com/scripted-editor/scripted/wiki/FAQ#wiki-Troubleshooting">Troubleshooting</a></li>
+<li><a href="https://github.com/scripted-editor/scripted/wiki/Architecture">Architecture</a></li>
+</ul>
+
+<h1><a style="display: block;" name="where-can-i-ask-questions,-provide-feedback-or-raise-issues?" href="#where-can-i-ask-questions,-provide-feedback-or-raise-issues?"></a>Where can I ask questions, provide feedback or raise issues?</h1>
+
+<ul>
+<li>The <a href="https://groups.google.com/forum/#!forum/scripted-dev">scripted-dev google group</a> is open for questions and discussion</li>
+<li>The <a href="https://issuetracker.springsource.com/browse/scripted">issuetracker</a> to raise issues or take a look and vote on existing issues.</li>
+</ul>
+
+<h1><a style="display: block;" name="what's-next-for-scripted?" href="#what's-next-for-scripted?"></a>What&rsquo;s next for Scripted?</h1>
+
+<ul>
+<li>Even smarter inferencing, leading to better content assist and easier navigation.</li>
+<li>More panes for the side panel. Currently there is just an editor pane but we intend to include search results panes,
+documentation, git information panes, perhaps code preview and simulated code execution panes. The intention will be
+for Scripted to try and automatically manage these where possible, so all the content on screen is kept relevant
+to the task at hand.</li>
+<li>Simple plugin system.</li>
+<li>Debugging. Exploring integration with tools like Chrome Dev Tools and node inspector.</li>
+</ul>
+
+<p>If you have more ideas for what you&rsquo;d like to see, let us know via
+a <a href="https://github.com/scripted-editor/scripted/issues">Github issue</a> or
+our <a href="https://groups.google.com/forum/#!forum/scripted-dev">scripted-dev</a> discussion group.</p>
+
+<h1><a style="display: block;" name="can-i-contribute?" href="#can-i-contribute?"></a>Can I contribute?</h1>
+
+<p>Sure! Just press <em>Fork</em> at the top of this github page and get coding. Before we accept pull requests we just need you to sign a simple contributor&rsquo;s
+agreement - which you can find <a href="https://support.springsource.com/spring_committer_signup">here</a>. Signing the contributor&rsquo;s agreement does not grant anyone commit rights to the main repository, but it does mean that we can accept your contributions, and you will get an author credit if we do. Active contributors might be asked to join the core team, and given the ability to merge pull requests.
+Pull requests should ideally reference a JIRA ticket in the <a href="https://issuetracker.springsource.com/browse/SCRIPTED">issuetracker</a> that details what the request is addressing.</p>
+
+<p>The codebase is entirely JavaScript/HTML/CSS.</p>
+
+<p>If you are keen to contribute but aren&rsquo;t sure what to work on, take a look at
+the <a href="https://github.com/scripted-editor/scripted/issues">github issues</a> for inspiration.
+The codebase is very new in places and isn&rsquo;t that tricky to get to grips with.</p>
+
+<p>If you don&rsquo;t feel like coding but still want to contribute, please join the discussion on the issues and scripted-dev group.</p>
+
+    <hr>
+    <div class="pagination">
+      <ul>
+        <ul>
+          
+          
+            <li class="prev disabled"><a>&larr; Previous</a></li>
+          
+
+            <li><a href="/archive">Archive</a></li>
+
+          
+            <li class="next"><a href="/Clojure/The-Clojure-Style-Guide/" title="The Clojure Style Guide">Next &rarr;</a></li>
+          
+          
+        </ul>
+      </ul>
+    </div>
+    <hr>
+    
+<div id="disqus_thread"></div>
+<script>
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>2013-04-11</span></div>
+    <br>
+    <h4>Categories</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/categories/#default-ref">default <span>1</span></a>
+</li>
+    
+    </ul>
+    <br>
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    </ul>
+  </div>
+</div>
+
+      </div>
+
+      <footer>
+        <p>&copy; David Xu 2013 
+          with help from <a href="http://github.com/wendal/gor" target="_blank" title="Gor -- Fast Blog">Gor</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+		  and Idea from <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+
+    
+<script>
+    var _gaq=[['_setAccount','UA-123-12'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+  </body>
+</html>
